@@ -446,7 +446,7 @@ endif
 
 if version >= 700
   " Screen line that the cursor is
-  call s:HL('CursorLine',   s:none, s:bg1)
+  call s:HL('CursorLine',   s:none, s:gb.dark0)
   " Screen column that the cursor is
   hi! link CursorColumn CursorLine
 
@@ -475,11 +475,11 @@ endif
 hi! link NonText GruvboxBg2
 hi! link SpecialKey GruvboxBg2
 
-call s:HL('Visual',    s:none,  s:bg3, s:invert_selection)
+call s:HL('Visual',    s:none,  s:bg0, s:invert_selection . s:bold)
 hi! link VisualNOS Visual
 
-call s:HL('Search',    s:yellow, s:bg0, s:inverse)
-call s:HL('IncSearch', s:hls_cursor, s:bg0, s:inverse)
+call s:HL('Search',    s:yellow, s:bg0, s:inverse . s:bold)
+call s:HL('IncSearch', s:hls_cursor, s:bg0, s:inverse . s:bold)
 
 call s:HL('Underlined', s:blue, s:none, s:underline)
 
@@ -499,7 +499,7 @@ hi! link Directory GruvboxGreenBold
 hi! link Title GruvboxGreenBold
 
 " Error messages on the command line
-call s:HL('ErrorMsg',   s:bg0, s:red, s:bold)
+call s:HL('ErrorMsg',   s:bg1, s:red, s:bold . s:inverse)
 " More prompt: -- More --
 hi! link MoreMsg GruvboxYellowBold
 " Current mode message: -- INSERT --
